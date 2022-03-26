@@ -1,6 +1,12 @@
+"""
+high level support for doing this and that.
+"""
+
+
 def welcome():
     """
-    This is where we introduce the user to the game and let the user choose role
+        We introduce the user to the game and let the user choose role.
+        We return to this function every time we want the game to reset.
     """
     print("CHAMPION! I have been waiting for you!")
     print("We need help slaying this beast! What role would you like to play?")
@@ -42,7 +48,7 @@ def main():
     elif role_choice == "dps":
         dps_game()
     else:
-        print("Please input a valid role")    
+        print("Please input a valid role")
 
 
 main()

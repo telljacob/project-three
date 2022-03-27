@@ -2,8 +2,6 @@
 high level support for doing this and that.
 """
 import random
-# import time
-# import sys
 
 
 def welcome():
@@ -130,14 +128,19 @@ def main():
     """
     This is the main function
     """
-    role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
+    while True:
+        try:
+            role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
+
+        except ValueError:
+            print("That is not correct, please select one of the roles")
+            continue
+        else:
+            break
     if role_choice == "tank":
         tank()
     elif role_choice == "healer":
         healer()
-    else:
-        print("Please choose a valid role")
-        main()
 
 
 welcome()

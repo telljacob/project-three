@@ -50,31 +50,34 @@ def healer_info():
     print("Press 4 to hide from the boss's main ability")
 
 
-def dps_info():
-    """
-    This function implements all your abilities as a dps player
-    """
-    role_selected()
-    print("Champion! Prepare yourself! And don't forget to use your abilities")
-    print("Press 1 to strike the boss")
-    print("Press 2 to use a defensive from heavy hitting abilities")
-    print("Press 3 to protect the entire group")
-    print("Press 4 to hide from the boss's main ability")
-
-
 def boss_hit():
+    hit = random.randint(0, 250)
+    print(f"The boss hits you for {hit} damage!")
+
+
+def boss_yell():
     """
-    Boss hit damage
+    Boss yell ability
+    """
+    print("The boss is preparing to yell, hide!")
+
+
+def player_hit():
+    """
+    Damage dealt by the player to the boss.
     """
     hit = random.randint(0, 80)
     boss_health -= hit
     print(f"You strike the boss inflicting {hit} damage!")
     print(f"Boss hp: {boss_health}")
 
+def player_heal():
+    """
+    Player healing ability
+    """
+    heal = random.randint(50, 250)
+    print("You heal for ")
 
-def boss_abilities():
-    print("The boss Yells! Inflicting damage")
-    
 
 def main():
     """
@@ -87,10 +90,8 @@ def main():
         tank_info()
     elif role_choice == "healer":
         healer_info()
-    elif role_choice == "dps":
-        dps_info()
     else:
-        print("Please input a valid role")
+        print("Please choose a valid role")
         main()
     boss_encounter()
 

@@ -2,6 +2,14 @@
 high level support for doing this and that.
 """
 
+# import random
+
+
+# def boss_abilities():
+
+
+# def boss_encounter():
+
 
 def welcome():
     """
@@ -16,21 +24,33 @@ def tank_game():
     """
     This function implements all your abilities as a tank player
     """
-    print("Hello tanks")
+    print("Champion! Prepare yourself! And don't forget to use your abilities")
+    print("Press 1 to strike the boss")
+    print("Press 2 to use a defensive from heavy hitting abilities")
+    print("Press 3 to protect the entire group")
+    print("Press 4 to hide from the boss's main ability")
 
 
 def healer_game():
     """
     This function implements all your abilities as a healer player
     """
-    print("Hello healers")
+    print("Champion! Prepare yourself! And don't forget to use your abilities")
+    print("Press 1 to strike the boss")
+    print("Press 2 to heal the tank")
+    print("Press 3 to protect the entire group for a few seconds")
+    print("Press 4 to hide from the boss's main ability")
 
 
 def dps_game():
     """
     This function implements all your abilities as a dps player
     """
-    print("Hello dps")
+    print("Champion! Prepare yourself! And don't forget to use your abilities")
+    print("Press 1 to strike the boss")
+    print("Press 2 to use a defensive from heavy hitting abilities")
+    print("Press 3 to protect the entire group")
+    print("Press 4 to hide from the boss's main ability")
 
 
 def main():

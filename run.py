@@ -92,7 +92,7 @@ def tank():
     player_health = 300
     boss_health = 1000
     tank_info()
-    while boss_health and player_health > 0:
+    while boss_health > 0 and player_health > 0:
         print()
         print(f"Your HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
@@ -123,7 +123,7 @@ def healer():
     player_health = 500
     boss_health = 1000
     healer_info()
-    while boss_health and player_health > 0:
+    while boss_health > 0 and player_health > 0:
         print()
         print(f"Tank HP: {player_health}")
         print(f"BOSS HP: {boss_health}")

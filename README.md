@@ -2,7 +2,7 @@
 
 The Boss Fight Project was made to explore the possibilities of making my own game from scratch using only what I have learned through the Python Essentials section of the Full-stack development course at Code Academy.
 
-Click here to try the live version of the game! LKFNLKSDFNKLSFLINKKKKKKKK
+[Click here to try the live version of the game!](https://telljacob.github.io/project-one/index.html)
 
 ![Responsive Mockup](https://github.com/telljacob/project-three/blob/main/Screen%20Shot%202022-03-27%20at%208.06.32%20AM.png)
 

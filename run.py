@@ -18,6 +18,7 @@ def tank_info():
     """
     This function implements all your abilities as a tank player
     """
+    print()
     response = input("Do you remember how to play tank? yes/no\n")
     if response == "no":
         print()
@@ -36,6 +37,7 @@ def healer_info():
     """
     This function implements all your abilities as a tank player
     """
+    print()
     response = input("Do you remember how to heal? yes/no\n")
     if response == "no":
         print()
@@ -54,7 +56,7 @@ def boss_hit():
     """
     The damage dealt by the boss, a random number between 20 and 100
     """
-    hit = random.randint(50, 100)
+    hit = random.randint(50, 90)
     print(f"The boss hit for {hit} damage!")
     return hit
 
@@ -63,7 +65,7 @@ def player_hit():
     """
     Damage dealt by the player to the boss, random amount between 0 and 80
     """
-    hit = random.randint(60, 80)
+    hit = random.randint(85, 120)
     print(f"You hit for {hit}")
     return hit
 
@@ -72,7 +74,7 @@ def player_heal():
     """
     Player healing ability
     """
-    heal = random.randint(80, 150)
+    heal = random.randint(130, 200)
     print(f"You heal for {heal}")
     return heal
 
@@ -101,8 +103,10 @@ def tank():
 
     if boss_health == 0:
         print("Congratulations! You defeated the boss!")
+        main()
     else:
-        input("The boss is laughing, you should try the boss again?\n")
+        print("The boss is laughing, Try again!\n")
+        main()
 
 
 def healer():

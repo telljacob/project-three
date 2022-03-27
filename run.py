@@ -6,17 +6,18 @@ import random
 
 def welcome():
     """
-        We introduce the user to the game and let the user choose role.
-        We return to this function every time we want the game to reset.
+        We introduce the user to the game.
+        This will only show the very first time the program runs.
     """
     print("CHAMPION! I have been waiting for you!")
-    print("We need help slaying this beast! What role would you like to play?")
     print()
 
 
 def tank_info():
     """
-    This function implements all your abilities as a tank player
+    This function introduces the user to the tank role and
+    asks the user if they are familiar with the role
+    or want a more in depth explanation.
     """
     print()
     response = input("Do you remember how to play tank? yes/no\n")
@@ -35,7 +36,9 @@ def tank_info():
 
 def healer_info():
     """
-    This function implements all your abilities as a tank player
+    This function introduces the user to the healer role and
+    asks the user if they are familiar with the role
+    or want a more in depth explanation.
     """
     print()
     response = input("Do you remember how to heal? yes/no\n")
@@ -54,7 +57,8 @@ def healer_info():
 
 def boss_hit():
     """
-    The damage dealt by the boss, a random number between 20 and 100
+    The damage dealt by the boss, a random number between 50 and 90 through
+    random.randint
     """
     hit = random.randint(50, 90)
     print(f"The boss hit for {hit} damage!")
@@ -63,7 +67,8 @@ def boss_hit():
 
 def player_hit():
     """
-    Damage dealt by the player to the boss, random amount between 0 and 80
+    Damage dealt by the player to the boss, a random number between 85 and 120
+    through random.randint
     """
     hit = random.randint(85, 120)
     print(f"You hit for {hit}")
@@ -72,7 +77,7 @@ def player_hit():
 
 def player_heal():
     """
-    Player healing ability
+    Player heal, a random number between 130 and 200 through random.randint
     """
     heal = random.randint(130, 200)
     print(f"You heal for {heal}")
@@ -81,14 +86,15 @@ def player_heal():
 
 def tank():
     """
-    Function runs if the player decides to play as a tank
+    Function runs if the player decides to play as a tank.
+    All the combat with a tank role will be done in this function.
     """
     player_health = 300
     boss_health = 1000
     tank_info()
     while boss_health and player_health > 0:
         print()
-        print(f"HP: {player_health}")
+        print(f"Your HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
         action = int(input("Attack or heal\n"))
         if action == 1:
@@ -111,7 +117,8 @@ def tank():
 
 def healer():
     """
-    Function runs if the user decides to play as a healer
+    Function runs if the player decides to play as a healer.
+    All the combat with a healer role will be done in this function.
     """
     player_health = 300
     boss_health = 1000
@@ -139,8 +146,10 @@ def healer():
 
 def main():
     """
-    This is the main function
+    This is the main function. The user chooses role here
+    and also check validation of the input.
     """
+    print("We need help slaying this beast! What role would you like to play?")
     while True:
         try:
             role_choice = input("Type 'tank' or 'healer' to choose.\n")

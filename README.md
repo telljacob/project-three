@@ -4,7 +4,7 @@ The Boss Fight Project was made to explore the possibilities of making my own ga
 
 Click here to try the live version of the game! LKFNLKSDFNKLSFLINKKKKKKKK
 
-![Responsive Mockup](https://github.com/telljacob/project-one/blob/main/assets/images/amiresponsive.png?raw=true)
+![Responsive Mockup](https://github.com/telljacob/project-three/blob/main/Screen%20Shot%202022-03-27%20at%208.06.32%20AM.png)
 
 ## How to play
 

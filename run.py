@@ -39,7 +39,8 @@ def main():
     """
     # player_health = 100
     # boss_health = 100
-    role_choice = input(print("Would you like to play tank, healer or dps?:\n"))
+    print("Would you like to be a tank, healer or dps?")
+    role_choice = input(print("Type 'tank', 'healer' or 'dps' to choose."))
     print(f"Fantastic choice, a {role_choice} is just what we need!")
     if role_choice == "tank":
         tank_game()

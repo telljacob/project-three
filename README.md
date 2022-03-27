@@ -7,7 +7,7 @@ It's exactly how plain it is what intrigues me. Being able to add the maths and 
 
 [Click here to try the live version of the game!](https://telljacob.github.io/project-one/index.html)
 
-![Responsive Mockup](https://github.com/telljacob/project-three/blob/main/Screen%20Shot%202022-03-27%20at%208.06.32%20AM.png)
+![Responsive Mockup](https://github.com/telljacob/project-three/blob/main/assets/images/responsivemockup.png)
 
 ## How to play
 
@@ -17,7 +17,7 @@ The tank focuses on damage but occasionally has to choose between healing or dea
 
 The result of each combat "round" is shown in the terminal together with the players and the bosse's current health pool to make a decision between attacking or healing.
 
-![Intro In Terminal](https://github.com/telljacob/project-three/blob/main/Screen%20Shot%202022-03-27%20at%207.45.13%20AM.png)
+![Intro In Terminal](https://github.com/telljacob/project-three/blob/main/assets/images/pythonterminal.png)
 
 
 ## Validator Testing

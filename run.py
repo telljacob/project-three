@@ -41,6 +41,7 @@ def tank_info():
     """
     This function implements all your abilities as a tank player
     """
+    role_selected()
     print("Champion! Prepare yourself! And don't forget to use your abilities")
     print("Press 1 to strike the boss")
     print("Press 2 to use a defensive from heavy hitting abilities")
@@ -52,6 +53,7 @@ def healer_info():
     """
     This function implements all your abilities as a healer player
     """
+    role_selected()
     print("Champion! Prepare yourself! And don't forget to use your abilities")
     print("Press 1 to strike the boss")
     print("Press 2 to heal the tank")
@@ -63,6 +65,7 @@ def dps_info():
     """
     This function implements all your abilities as a dps player
     """
+    role_selected()
     print("Champion! Prepare yourself! And don't forget to use your abilities")
     print("Press 1 to strike the boss")
     print("Press 2 to use a defensive from heavy hitting abilities")

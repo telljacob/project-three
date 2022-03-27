@@ -19,6 +19,10 @@ The result of each combat "round" is shown in the terminal together with the pla
 
 ![Intro In Terminal](https://github.com/telljacob/project-three/blob/main/assets/images/pythonterminal.png)
 
+![Bosscombat](https://github.com/telljacob/project-three/blob/main/assets/images/bosscombat.png)
+
+
+
 
 ## Validator Testing
 

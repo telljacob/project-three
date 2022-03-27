@@ -66,10 +66,11 @@ def main():
     """
     This is the main function
     """
-    # player_health = 1000
-    # boss_health = 1000
-    welcome()
+    player_health = 1000
+    boss_health = 1000
     role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
+    print(f"Fantastic choice, a {role_choice} is just what we need!")
+    print(f"In case you forgot, this is how you play {role_choice}.")
     if role_choice == "tank":
         tank_info()
     elif role_choice == "healer":
@@ -78,8 +79,9 @@ def main():
         dps_info()
     else:
         print("Please input a valid role")
-    print(f"Fantastic choice, a {role_choice} is just what we need!")
+        main()
     boss_encounter()
 
 
+welcome()
 main()

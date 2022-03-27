@@ -10,6 +10,7 @@ def welcome():
         This will only show the very first time the program runs.
     """
     print("CHAMPION! I have been waiting for you!")
+    print("We need your help killing this beast.")
     print()
 
 
@@ -159,7 +160,7 @@ def main():
     This is the main function. The user chooses role here
     and also check validation of the input.
     """
-    print("We need help slaying this beast! What role would you like to play?")
+    print("What role would you like to play?")
     while True:
         try:
             role_choice = input("Type 'tank' or 'healer' to choose.\n")

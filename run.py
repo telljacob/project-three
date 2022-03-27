@@ -66,7 +66,7 @@ def main():
     # player_health = 1000
     # boss_health = 1000
     welcome()
-    role_choice = input(print("Type 'tank', 'healer' or 'dps' to choose."))
+    role_choice = input("Type 'tank', 'healer' or 'dps' to choose.")
     if role_choice == "tank":
         tank_info()
     elif role_choice == "healer":

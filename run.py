@@ -153,6 +153,7 @@ def main():
     while True:
         try:
             role_choice = input("Type 'tank' or 'healer' to choose.\n")
+            print()
 
         except ValueError:
             print("That is not correct, please select one of the above roles")

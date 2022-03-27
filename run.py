@@ -161,20 +161,15 @@ def main():
     and also check validation of the input.
     """
     print("What role would you like to play?")
-    while True:
-        try:
-            role_choice = input("Type 'tank' or 'healer' to choose.\n")
-            print()
-
-        except ValueError:
-            print("That is not correct, please select one of the above roles")
-            continue
-        else:
-            break
+    role_choice = input("Type 'tank' or 'healer' to choose.\n")
+    print()
     if role_choice == "tank":
         tank()
     elif role_choice == "healer":
         healer()
+    else:
+        print("That is not correct, please select one of the above roles")
+        main()
 
 
 welcome()

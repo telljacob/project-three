@@ -96,7 +96,7 @@ def tank():
         print()
         print(f"Your HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
-        action = int(input("Attack or heal\n"))
+        action = int(input("Attack(1) or heal(2)\n"))
         if action == 1:
             boss_health = boss_health - player_hit()
         elif action == 2:
@@ -127,7 +127,7 @@ def healer():
         print()
         print(f"Tank HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
-        action = int(input("Attack or heal the tank\n"))
+        action = int(input("Attack(1) or heal the tank(2)\n"))
         if action == 1:
             boss_health = boss_health - player_hit()
         elif action == 2:

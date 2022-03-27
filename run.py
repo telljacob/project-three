@@ -71,7 +71,7 @@ def player_hit():
     through random.randint
     """
     hit = random.randint(85, 120)
-    print(f"You hit for {hit}")
+    print(f"You hit for {hit} damage!")
     return hit
 
 
@@ -80,7 +80,7 @@ def player_heal():
     Player heal, a random number between 130 and 200 through random.randint
     """
     heal = random.randint(130, 200)
-    print(f"You heal for {heal}")
+    print(f"You heal for {heal}!")
     return heal
 
 
@@ -107,7 +107,7 @@ def tank():
             player_health = player_health - boss_hit()
         player_health = player_health - boss_hit()
 
-    if boss_health == 0:
+    if boss_health <= 0:
         print("Congratulations! You defeated the boss!")
         main()
     else:
@@ -120,7 +120,7 @@ def healer():
     Function runs if the player decides to play as a healer.
     All the combat with a healer role will be done in this function.
     """
-    player_health = 300
+    player_health = 500
     boss_health = 1000
     healer_info()
     while boss_health and player_health > 0:
@@ -130,6 +130,9 @@ def healer():
         action = int(input("Attack(1) or heal the tank(2)\n"))
         if action == 1:
             boss_health = boss_health - player_hit()
+            tank_dps = random.randint(100, 140)
+            boss_health = boss_health - tank_dps
+            print(f"The tank slammed the boss for {tank_dps}")
         elif action == 2:
             player_health = player_health + player_heal()
         else:
@@ -138,7 +141,7 @@ def healer():
             player_health = player_health - boss_hit()
         player_health = player_health - boss_hit()
 
-    if boss_health == 0:
+    if boss_health <= 0:
         print("Congratulations! You defeated the boss!")
     else:
         input("The boss is laughing, you should try the boss again?\n")

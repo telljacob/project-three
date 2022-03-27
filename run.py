@@ -19,7 +19,7 @@ def tank_info():
     """
     This function implements all your abilities as a tank player
     """
-    response = input("Do you remember how to tank this boss? yes/no")
+    response = input("Do you remember how to tank this boss? yes/no\n")
     if response == "no":
         print("Press 1 to strike the boss")
         print("Press 2 to use a defensive from heavy hitting abilities")
@@ -35,7 +35,7 @@ def healer_info():
     """
     This function implements all your abilities as a healer player
     """
-    response = input("Do you remember how to heal this boss? yes/no")
+    response = input("Do you remember how to heal this boss? yes/no\n")
     if response == "no":
         print("Press 1 to strike the boss")
         print("Press 2 to heal the tank")
@@ -48,16 +48,21 @@ def healer_info():
 
 
 def boss_hit():
-    hit = random.randint(0, 100)
+    """
+    The damage dealt by the boss, a random number between 20 and 100
+    """
+    hit = random.randint(20, 100)
     print(f"The boss hit for {hit} damage!")
+    return hit
 
 
 def player_hit():
     """
-    Damage dealt by the player to the boss.
+    Damage dealt by the player to the boss, random amount between 0 and 80
     """
     hit = random.randint(0, 80)
-    return print(f"You hit for {hit}")
+    print(f"You hit for {hit}")
+    return hit
 
 
 def player_heal():
@@ -65,20 +70,8 @@ def player_heal():
     Player healing ability
     """
     heal = random.randint(100, 150)
-    PLAYER_HEALTH += heal
-    return print(f"You heal for {heal}")
-
-
-def player_choice(num):
-    """
-    Player chooses what action to take
-    """
-    if num == 1:
-        player_hit()
-    elif num == 2:
-        player_heal()
-    else:
-        print("You pressed something wrong! Oh no!")
+    print(f"You heal for {heal}")
+    return heal
 
 
 def main():
@@ -103,7 +96,10 @@ def main():
         print(f"HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
         action = int(input("Attack or heal"))
-        player_choice(action)
+        if action == 1:
+            boss_health = boss_health - player_hit()
+        elif action == 2:
+            player_health = player_health + player_heal()
 
     if boss_health == 0:
         input("Congratulations! You defeated the boss!")

@@ -1,6 +1,9 @@
 # Boss Fight Project
 
-The Boss Fight Project was made to explore the possibilities of making my own game from scratch using only what I have learned through the Python Essentials section of the Full-stack development course at Code Academy.
+The Boss Fight Project was made to explore the possibilities of making my own game from scratch with inspiration from more modern games using only what I have learned through the Python Essentials section of the Full-stack development course at Code Academy.
+
+It's exactly how plain it is what intrigues me. Being able to add the maths and logic of modern games to a simply Python program is an interesting concept to me which I wanted to expand on.
+
 
 [Click here to try the live version of the game!](https://telljacob.github.io/project-one/index.html)
 

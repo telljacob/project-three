@@ -11,6 +11,7 @@ def welcome():
     """
     print("CHAMPION! I have been waiting for you!")
     print("We need help slaying this beast! What role would you like to play?")
+    print()
 
 
 def tank_info():
@@ -19,10 +20,12 @@ def tank_info():
     """
     response = input("Do you remember how to play tank? yes/no\n")
     if response == "no":
+        print()
         print("The tank fights the beast, the healer helps you stay alive.")
         print("Press 1 to strike the boss.")
         print("Press 2 to use a defensive from heavy hitting abilities.")
     elif response == "yes":
+        print()
         print("Excellent! Let's start the fight")
     else:
         print("Please respond yes or no")
@@ -35,10 +38,12 @@ def healer_info():
     """
     response = input("Do you remember how to heal? yes/no\n")
     if response == "no":
+        print()
         print("As the healer it is your job to keep the tank alive.")
         print("Press 1 to strike the boss when the tank has high health.")
         print("Press 2 to heal the tank when they get low on health.")
     elif response == "yes":
+        print()
         print("Excellent! Let's start the fight")
     else:
         print("Please respond yes or no")
@@ -80,6 +85,7 @@ def tank():
     boss_health = 1000
     tank_info()
     while boss_health and player_health > 0:
+        print()
         print(f"HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
         action = int(input("Attack or heal\n"))
@@ -88,6 +94,7 @@ def tank():
         elif action == 2:
             player_health = player_health + player_heal()
         else:
+            print()
             print("You messed up, the boss strikes you twice. Ouch!")
             player_health = player_health - boss_hit()
         player_health = player_health - boss_hit()
@@ -106,6 +113,7 @@ def healer():
     boss_health = 1000
     healer_info()
     while boss_health and player_health > 0:
+        print()
         print(f"Tank HP: {player_health}")
         print(f"BOSS HP: {boss_health}")
         action = int(input("Attack or heal the tank\n"))
@@ -114,6 +122,7 @@ def healer():
         elif action == 2:
             player_health = player_health + player_heal()
         else:
+            print()
             print("You messed up, the boss striked the tank twice. Ouch!")
             player_health = player_health - boss_hit()
         player_health = player_health - boss_hit()
@@ -130,10 +139,10 @@ def main():
     """
     while True:
         try:
-            role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
+            role_choice = input("Type 'tank' or 'healer' to choose.\n")
 
         except ValueError:
-            print("That is not correct, please select one of the roles")
+            print("That is not correct, please select one of the above roles")
             continue
         else:
             break

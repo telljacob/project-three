@@ -9,17 +9,6 @@ import random
 # import random
 
 
-# def boss_abilities():
-
-
-def boss_encounter():
-    """
-    Boss hit damage
-    """
-    boss_hit = random.randint(0, 200)
-    print(boss_hit)
-
-
 def welcome():
     """
         We introduce the user to the game and let the user choose role.
@@ -73,13 +62,27 @@ def dps_info():
     print("Press 4 to hide from the boss's main ability")
 
 
+def boss_hit():
+    """
+    Boss hit damage
+    """
+    hit = random.randint(0, 80)
+    boss_health -= hit
+    print(f"You strike the boss inflicting {hit} damage!")
+    print(f"Boss hp: {boss_health}")
+
+
+def boss_abilities():
+    print("The boss Yells! Inflicting damage")
+    
+
 def main():
     """
     This is the main function
     """
-    player_health = 1000
-    boss_health = 1000
-    role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
+    global player_health = 1000
+    global boss_health = 1000
+    global role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
     if role_choice == "tank":
         tank_info()
     elif role_choice == "healer":

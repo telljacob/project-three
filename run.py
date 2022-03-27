@@ -1,6 +1,10 @@
 """
 high level support for doing this and that.
 """
+import random
+# import time
+# import sys
+
 
 # import random
 
@@ -8,7 +12,9 @@ high level support for doing this and that.
 # def boss_abilities():
 
 
-# def boss_encounter():
+def boss_encounter():
+    boss_hit = random.randint(0, 200)
+    print(boss_hit)
 
 
 def welcome():
@@ -20,7 +26,7 @@ def welcome():
     print("We need help slaying this beast! What role would you like to play?")
 
 
-def tank_game():
+def tank_info():
     """
     This function implements all your abilities as a tank player
     """
@@ -31,7 +37,7 @@ def tank_game():
     print("Press 4 to hide from the boss's main ability")
 
 
-def healer_game():
+def healer_info():
     """
     This function implements all your abilities as a healer player
     """
@@ -42,7 +48,7 @@ def healer_game():
     print("Press 4 to hide from the boss's main ability")
 
 
-def dps_game():
+def dps_info():
     """
     This function implements all your abilities as a dps player
     """
@@ -57,19 +63,20 @@ def main():
     """
     This is the main function
     """
-    # player_health = 100
-    # boss_health = 100
-    print("Would you like to be a tank, healer or dps?")
+    # player_health = 1000
+    # boss_health = 1000
+    welcome()
     role_choice = input(print("Type 'tank', 'healer' or 'dps' to choose."))
-    print(f"Fantastic choice, a {role_choice} is just what we need!")
     if role_choice == "tank":
-        tank_game()
+        tank_info()
     elif role_choice == "healer":
-        healer_game()
+        healer_info()
     elif role_choice == "dps":
-        dps_game()
+        dps_info()
     else:
         print("Please input a valid role")
+    print(f"Fantastic choice, a {role_choice} is just what we need!")
+    boss_encounter()
 
 
 main()

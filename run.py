@@ -29,6 +29,14 @@ def welcome():
     print("We need help slaying this beast! What role would you like to play?")
 
 
+def role_selected():
+    """
+    Message to the user about which role they chose
+    """
+    print(f"Fantastic choice, a {role_choice} is just what we need!")
+    print(f"In case you forgot, this is how you play {role_choice}.")
+
+
 def tank_info():
     """
     This function implements all your abilities as a tank player
@@ -69,8 +77,6 @@ def main():
     player_health = 1000
     boss_health = 1000
     role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
-    print(f"Fantastic choice, a {role_choice} is just what we need!")
-    print(f"In case you forgot, this is how you play {role_choice}.")
     if role_choice == "tank":
         tank_info()
     elif role_choice == "healer":

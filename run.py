@@ -111,8 +111,11 @@ def tank():
         print("Congratulations! You defeated the boss!")
         main()
     else:
-        print("The boss is laughing, Try again!\n")
-        main()
+        answer = input("You died, do you want to try again? yes/no\n")
+        if answer == "yes":
+            main()
+        else:
+            print("Thank you for trying out my game :)")
 
 
 def healer():
@@ -144,7 +147,11 @@ def healer():
     if boss_health <= 0:
         print("Congratulations! You defeated the boss!")
     else:
-        input("The boss is laughing, you should try the boss again?\n")
+        answer = input("You died, do you want to try again? yes/no\n")
+        if answer == "yes":
+            main()
+        else:
+            print("Thank you for trying out my game :)")
 
 
 def main():

@@ -6,9 +6,6 @@ import random
 # import sys
 
 
-# import random
-
-
 def welcome():
     """
         We introduce the user to the game and let the user choose role.
@@ -18,48 +15,41 @@ def welcome():
     print("We need help slaying this beast! What role would you like to play?")
 
 
-def role_selected():
-    """
-    Message to the user about which role they chose
-    """
-    print(f"Fantastic choice, a {role_choice} is just what we need!")
-    print(f"In case you forgot, this is how you play {role_choice}.")
-
-
 def tank_info():
     """
     This function implements all your abilities as a tank player
     """
-    role_selected()
-    print("Champion! Prepare yourself! And don't forget to use your abilities")
-    print("Press 1 to strike the boss")
-    print("Press 2 to use a defensive from heavy hitting abilities")
-    print("Press 3 to protect the entire group")
-    print("Press 4 to hide from the boss's main ability")
+    response = input("Do you remember how to tank this boss? yes/no")
+    if response == "no":
+        print("Press 1 to strike the boss")
+        print("Press 2 to use a defensive from heavy hitting abilities")
+        print("Press 3 to hide from the boss's main ability")
+    elif response == "yes":
+        print("Excellent! Let's start the fight")
+    else:
+        print("Please respond yes or no")
+        tank_info()
 
 
 def healer_info():
     """
     This function implements all your abilities as a healer player
     """
-    role_selected()
-    print("Champion! Prepare yourself! And don't forget to use your abilities")
-    print("Press 1 to strike the boss")
-    print("Press 2 to heal the tank")
-    print("Press 3 to protect the entire group for a few seconds")
-    print("Press 4 to hide from the boss's main ability")
+    response = input("Do you remember how to heal this boss? yes/no")
+    if response == "no":
+        print("Press 1 to strike the boss")
+        print("Press 2 to heal the tank")
+        print("Press 3 to hide from the boss's main ability")
+    elif response == "yes":
+        print("Excellent! Let's start the fight")
+    else:
+        print("Please respond with yes or no")
+        healer_info()
 
 
 def boss_hit():
-    hit = random.randint(0, 250)
-    print(f"The boss hits you for {hit} damage!")
-
-
-def boss_yell():
-    """
-    Boss yell ability
-    """
-    print("The boss is preparing to yell, hide!")
+    hit = random.randint(0, 100)
+    print(f"The boss hit for {hit} damage!")
 
 
 def player_hit():
@@ -67,25 +57,37 @@ def player_hit():
     Damage dealt by the player to the boss.
     """
     hit = random.randint(0, 80)
-    boss_health -= hit
-    print(f"You strike the boss inflicting {hit} damage!")
-    print(f"Boss hp: {boss_health}")
+    return print(f"You hit for {hit}")
+
 
 def player_heal():
     """
     Player healing ability
     """
-    heal = random.randint(50, 250)
-    print("You heal for ")
+    heal = random.randint(100, 150)
+    PLAYER_HEALTH += heal
+    return print(f"You heal for {heal}")
+
+
+def player_choice(num):
+    """
+    Player chooses what action to take
+    """
+    if num == 1:
+        player_hit()
+    elif num == 2:
+        player_heal()
+    else:
+        print("You pressed something wrong! Oh no!")
 
 
 def main():
     """
     This is the main function
     """
-    global player_health = 1000
-    global boss_health = 1000
-    global role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
+    player_health = 300
+    boss_health = 1000
+    role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
     if role_choice == "tank":
         tank_info()
     elif role_choice == "healer":
@@ -93,7 +95,20 @@ def main():
     else:
         print("Please choose a valid role")
         main()
-    boss_encounter()
+
+    print("Champion! Prepare yourself! And don't forget to use your abilities")
+
+    while boss_health and player_health > 0:
+        boss_hit()
+        print(f"HP: {player_health}")
+        print(f"BOSS HP: {boss_health}")
+        action = int(input("Attack or heal"))
+        player_choice(action)
+
+    if boss_health == 0:
+        input("Congratulations! You defeated the boss!")
+    else:
+        input("The boss is laughing, would you like to try the boss again?")
 
 
 welcome()

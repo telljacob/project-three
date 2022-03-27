@@ -13,6 +13,9 @@ import random
 
 
 def boss_encounter():
+    """
+    Boss hit damage
+    """
     boss_hit = random.randint(0, 200)
     print(boss_hit)
 
@@ -66,7 +69,7 @@ def main():
     # player_health = 1000
     # boss_health = 1000
     welcome()
-    role_choice = input("Type 'tank', 'healer' or 'dps' to choose.")
+    role_choice = input("Type 'tank', 'healer' or 'dps' to choose.\n")
     if role_choice == "tank":
         tank_info()
     elif role_choice == "healer":
